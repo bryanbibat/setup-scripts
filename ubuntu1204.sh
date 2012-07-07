@@ -34,11 +34,12 @@ make
 sudo make install
 echo -e "\n=> Syncing gVim...\n"
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-wget https://raw.github.com/bryanbibat/setup-scripts/master/.vimrc -O ~/.vimrc
+wget https://raw.github.com/bryanbibat/setup-scripts/master/.vundle -O ~/.vimrc
 vim +BundleInstall +qall
 cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
 make
+wget https://raw.github.com/bryanbibat/setup-scripts/master/.vimrc -O ~/.vimrc
 
 # install Node.js
 echo -e "\n=> Downloading Node.js v8.1...\n"
