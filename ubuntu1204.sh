@@ -1,6 +1,5 @@
 #!/bin/bash
 shopt -s nocaseglob
-set -e
 
 # switch to faster server (ph.archive.ubuntu.com is in UK)
 echo -e "\n=> Updating your system...\n"
