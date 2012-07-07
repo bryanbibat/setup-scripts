@@ -12,7 +12,7 @@ sudo apt-get -y upgrade
 
 # install build tools, rvm/ruby dependencies, and other basic stuff (git, Inconsolata)
 echo -e "\n=> Installing basic packages...\n"
-sudo apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion ttf-inconsolata
+sudo apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev autoconf libc6-dev libncurses5-dev automake libtool bison subversion ttf-inconsolata
 
 # install RVM/Ruby
 echo -e "\n=> Installing RVM and Ruby 1.9.3...\n"
@@ -23,7 +23,7 @@ rvm use 1.9.3 --default
 
 # install gVim
 echo -e "\n=> Installing gVim dependencies...\n"
-sudo apt-get -y install libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev mercurial
+sudo apt-get -y install libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev mercurial
 echo -e "\n=> Downloading gVim source...\n"
 hg clone https://code.google.com/p/vim/ /tmp/vim
 echo -e "\n=> Building gVim...\n"
