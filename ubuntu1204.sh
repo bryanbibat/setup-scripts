@@ -46,7 +46,7 @@ cd /tmp
 wget http://nodejs.org/dist/v0.8.1/node-v0.8.1.tar.gz
 tar zxvf node-v0.8.1.tar.gz
 echo -e "\n=> Building Node.js v8.1...\n"
-cd node-v0.8.1.tar.gz
+cd node-v0.8.1
 ./configure
 make
 sudo make install
