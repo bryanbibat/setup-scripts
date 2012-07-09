@@ -11,14 +11,14 @@ sudo apt-get -y upgrade
 
 # install build tools, rvm/ruby dependencies, and other basic stuff (git, Inconsolata)
 echo -e "\n=> Installing basic packages...\n"
-sudo apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev autoconf libc6-dev libncurses5-dev automake libtool bison subversion ttf-inconsolata
+sudo apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev autoconf libc6-dev libncurses5-dev automake libtool bison subversion ttf-inconsolata gitk
 
 # install RVM/Ruby
 echo -e "\n=> Installing RVM and Ruby 1.9.3...\n"
 curl -L https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 ~/.rvm/bin/rvm install 1.9.3
-rvm use 1.9.3 --default
+~/.rvm/bin/rvm use 1.9.3 --default
 
 # install gVim
 echo -e "\n=> Installing gVim dependencies...\n"
@@ -54,6 +54,7 @@ sudo make install
 cd ~
 
 # setup Git
+echo -e "\n=> Setting up git...\n"
 git config --global user.name "Bryan Bibat"
 git config --global user.email "bry@bryanbibat.net"
 ssh-keygen -t rsa -C "bry@bryanbibat.net"
