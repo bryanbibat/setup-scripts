@@ -58,3 +58,9 @@ echo -e "\n=> Setting up git...\n"
 git config --global user.name "Bryan Bibat"
 git config --global user.email "bry@bryanbibat.net"
 ssh-keygen -t rsa -C "bry@bryanbibat.net"
+
+echo -e "\n=> Installing system monitor indicator...\n"
+sydi apt-get -y install indicator-multiload
+
+echo -e "\n=> Initial setup complete!\n"
+echo -e "\n=> Final steps:\n   * Install VM guest additions\n   * Update font for terminal\n   * Enable system indicator\n"
