@@ -57,6 +57,8 @@ cd ~
 echo -e "\n=> Setting up git...\n"
 git config --global user.name "Bryan Bibat"
 git config --global user.email "bry@bryanbibat.net"
+wget https://raw.github.com/bryanbibat/setup-scripts/master/.gitignore_global -O ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
 ssh-keygen -t rsa -C "bry@bryanbibat.net"
 
 echo -e "\n=> Installing system monitor indicator...\n"
