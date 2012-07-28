@@ -1,9 +1,4 @@
 #!/bin/bash
-shopt -q login_shell
-if [ $? = "1" ]; then
-  echo "Not a login shell. See https://rvm.io/integration/gnome-terminal/ to enable it."
-  exit 1
-fi
 
 shopt -s nocaseglob
 
@@ -21,8 +16,10 @@ sudo apt-get -y install build-essential libreadline6-dev curl git-core zlib1g-de
 
 # install RVM/Ruby
 echo -e "\n=> Installing RVM and Ruby 1.9.3...\n"
-curl -L https://get.rvm.io | bash -s stable --ruby
+curl -L https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
+~/.rvm/bin/rvm install 1.9.3
+~/.rvm/bin/rvm use 1.9.3 --default
 
 # install gVim
 echo -e "\n=> Installing gVim dependencies...\n"
@@ -69,4 +66,4 @@ echo -e "\n=> Installing system monitor indicator...\n"
 sudo apt-get -y install indicator-multiload
 
 echo -e "\n=> Initial setup complete!\n"
-echo -e "\n=> Final steps:\n   * Install VM guest additions\n   * Update font for terminal\n   * Enable system indicator\n"
+echo -e "\n=> Final steps:\n   * Install VM guest additions\n   * Update font for terminal\n   * Enable system indicator\n   * Enable login shell in gnome-terminal\n"

@@ -8,4 +8,4 @@ Scripts for setting up new development machines. Parts shamelessly ripped from [
 
 ## Mint 13 Cinnamon
 
-    wget --no-check-certificate https://raw.github.com/bryanbibat/setup-scripts/master/mint13cin.sh && bash mint13cin.sh
+    wget --no-check-certificate https://raw.github.com/bryanbibat/setup-scripts/master/mint13cin.sh && bash -l mint13cin.sh
