@@ -17,8 +17,8 @@ sudo apt-get -y install build-essential openssl libreadline6 libreadline6-dev cu
 echo -e "\n=> Installing RVM and Ruby 1.9.3...\n"
 curl -L https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
-rvm install 1.9.3
-rvm use 1.9.3 --default
+~/.rvm/bin/rvm install 1.9.3
+~/.rvm/bin/rvm use 1.9.3 --default
 
 # install gVim
 echo -e "\n=> Installing gVim dependencies...\n"
