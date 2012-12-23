@@ -18,7 +18,7 @@ echo -e "\n=> Installing RVM and Ruby 1.9.3...\n"
 curl -L https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 ~/.rvm/bin/rvm install 1.9.3
-~/.rvm/bin/rvm use 1.9.3 --default
+rvm use 1.9.3 --default
 
 # install gVim
 echo -e "\n=> Installing gVim dependencies...\n"
@@ -29,7 +29,7 @@ echo -e "\n=> Building gVim...\n"
 cd /tmp/vim/src/
 make distclean
 ./configure --with-features=huge --enable-gui=gnome2 --enable-rubyinterp 
-make
+make -j3
 sudo make install
 echo -e "\n=> Syncing gVim...\n"
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -37,7 +37,7 @@ wget https://raw.github.com/bryanbibat/setup-scripts/master/.vundle -O ~/.vimrc
 vim +BundleInstall +qall
 cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
-make -j 3
+make -j3
 wget https://raw.github.com/bryanbibat/setup-scripts/master/.vimrc -O ~/.vimrc
 
 # install Node.js
@@ -48,7 +48,7 @@ tar zxvf node-v0.8.16.tar.gz
 echo -e "\n=> Building Node.js v8.16...\n"
 cd node-v0.8.16
 ./configure
-make -j 3
+make -j3
 sudo make install
 
 cd ~
