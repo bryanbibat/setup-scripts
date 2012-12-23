@@ -17,14 +17,14 @@ sudo apt-get -y install build-essential openssl libreadline6 libreadline6-dev cu
 echo -e "\n=> Installing RVM and Ruby 1.9.3...\n"
 curl -L https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
-~/.rvm/bin/rvm install 1.9.3
-~/.rvm/bin/rvm use 1.9.3 --default
+rvm install 1.9.3
+rvm use 1.9.3 --default
 
 # install gVim
 echo -e "\n=> Installing gVim dependencies...\n"
 sudo apt-get -y install libgnome2-dev libgnomeui-dev libgtk2.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev mercurial
 echo -e "\n=> Downloading gVim source...\n"
-hg clone https://code.google.com/p/vim/ /tmp/vim
+hg clone http://code.google.com/p/vim/ /tmp/vim --debug
 echo -e "\n=> Building gVim...\n"
 cd /tmp/vim/src/
 make distclean
@@ -41,11 +41,11 @@ make
 wget https://raw.github.com/bryanbibat/setup-scripts/master/.vimrc -O ~/.vimrc
 
 # install Node.js
-echo -e "\n=> Downloading Node.js v8.1...\n"
+echo -e "\n=> Downloading Node.js v8.16...\n"
 cd /tmp
-wget http://nodejs.org/dist/v0.8.1/node-v0.8.1.tar.gz
-tar zxvf node-v0.8.1.tar.gz
-echo -e "\n=> Building Node.js v8.1...\n"
+wget http://nodejs.org/dist/v0.8.16/node-v0.8.16.tar.gz
+tar zxvf node-v0.8.16.tar.gz
+echo -e "\n=> Building Node.js v8.16...\n"
 cd node-v0.8.1
 ./configure
 make
