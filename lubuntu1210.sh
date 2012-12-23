@@ -37,7 +37,7 @@ wget https://raw.github.com/bryanbibat/setup-scripts/master/.vundle -O ~/.vimrc
 vim +BundleInstall +qall
 cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
-make
+make -j 3
 wget https://raw.github.com/bryanbibat/setup-scripts/master/.vimrc -O ~/.vimrc
 
 # install Node.js
@@ -48,7 +48,7 @@ tar zxvf node-v0.8.16.tar.gz
 echo -e "\n=> Building Node.js v8.16...\n"
 cd node-v0.8.16
 ./configure
-make
+make -j 3
 sudo make install
 
 cd ~
