@@ -46,7 +46,7 @@ cd /tmp
 wget http://nodejs.org/dist/v0.8.16/node-v0.8.16.tar.gz
 tar zxvf node-v0.8.16.tar.gz
 echo -e "\n=> Building Node.js v8.16...\n"
-cd node-v0.8.1
+cd node-v0.8.16
 ./configure
 make
 sudo make install
@@ -60,9 +60,6 @@ git config --global user.email "bry@bryanbibat.net"
 wget https://raw.github.com/bryanbibat/setup-scripts/master/.gitignore_global -O ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 ssh-keygen -t rsa -C "bry@bryanbibat.net"
-
-echo -e "\n=> Installing system monitor indicator...\n"
-sudo apt-get -y install indicator-multiload
 
 echo -e "\n=> Initial setup complete!\n"
 echo -e "\n=> Final steps:\n   * Install VM guest additions\n   * Update font for terminal\n   * Enable system indicator\n"
