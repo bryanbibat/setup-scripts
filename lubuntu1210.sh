@@ -64,7 +64,7 @@ mkdir ~/.config/autostart/ -p
 echo "[Desktop Entry]
 
 Type=Application
-Exec=setlayout 0 2 2 0" > ~/.config/autostart/setlayout.desktop
+Exec=setlayout 1 2 2 0" > ~/.config/autostart/setlayout.desktop
 
 cd ~
 
