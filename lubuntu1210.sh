@@ -52,6 +52,20 @@ cd node-v0.8.16
 make -j3
 sudo make install
 
+echo -e "\n=> Adding desktops...\n"
+
+cd /tmp
+mkdir ~/.config/openbox/ -p
+wget https://raw.github.com/bryanbibat/setup-scripts/master/lxde/lubuntu-rc.xml -O ~/.config/openbox/lubuntu-rc.xml
+wget https://raw.github.com/bryanbibat/setup-scripts/master/lxde/setlayout.c
+gcc -o setlayout setlayout.c -lX11
+sudo cp setlayout /usr/local/bin/setlayout
+mkdir ~/.config/autostart/ -p
+echo "[Desktop Entry]
+
+Type=Application
+Exec=setlayout 0 2 2 0" > ~/.config/autostart/setlayout.desktop
+
 cd ~
 
 # setup Git
@@ -63,4 +77,4 @@ git config --global core.excludesfile ~/.gitignore_global
 ssh-keygen -t rsa -C "bry@bryanbibat.net"
 
 echo -e "\n=> Initial setup complete!\n"
-echo -e "\n=> Final steps:\n   * Install VM guest additions\n   * Update font for terminal\n   * Enable system indicator\n"
+echo -e "\n=> Final steps:\n   * Install VM guest additions\n   * Update font for terminal\n   * Enable system indicator\n   * Reboot\n"
