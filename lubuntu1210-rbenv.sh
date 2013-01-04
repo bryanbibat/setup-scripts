@@ -32,7 +32,7 @@ hg clone http://code.google.com/p/vim/ /tmp/vim --debug
 echo -e "\n=> Building gVim...\n"
 cd /tmp/vim/src/
 make distclean
-./configure --with-features=huge --enable-gui=gnome2 --enable-rubyinterp 
+./configure --with-features=huge --enable-gui=gtk2 --enable-rubyinterp 
 make -j3
 sudo make install
 echo -e "\n=> Syncing gVim...\n"
