@@ -18,7 +18,7 @@ echo -e "\n=> Installing rbenv and Ruby 1.9.3...\n"
 git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
 echo 'export PATH="./bin:$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-exec $SHELL -l
+source ~/.bash_profile
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 rbenv install 1.9.3-p362 MAKE_OPTS="-j3"
 rbenv rehash
