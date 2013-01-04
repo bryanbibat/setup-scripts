@@ -37,7 +37,7 @@ make -j3
 sudo make install
 echo -e "\n=> Syncing gVim...\n"
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-wget https://raw.github.com/bryanbibat/setup-scripts/master/.vundle -O ~/.vimrc
+wget https://raw.github.com/bryanbibat/setup-scripts/master/.vundle -O ~/.gvimrc
 vim +BundleInstall +qall
 cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
