@@ -16,8 +16,9 @@ sudo apt-get -y install build-essential openssl libreadline6 libreadline6-dev cu
 # install rbenv/Ruby
 echo -e "\n=> Installing rbenv and Ruby 1.9.3...\n"
 git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
-echo 'export PATH="./bin:$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+echo 'export PATH="./bin:$PATH"' >> ~/.bash_profile
 source ~/.bash_profile
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 rbenv install 1.9.3-p362 MAKE_OPTS="-j3"
@@ -37,12 +38,13 @@ make -j3
 sudo make install
 echo -e "\n=> Syncing gVim...\n"
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-wget https://raw.github.com/bryanbibat/setup-scripts/master/.vundle -O ~/.gvimrc
+wget https://raw.github.com/bryanbibat/setup-scripts/master/.vundle -O ~/.vimrc
 vim +BundleInstall +qall
+rm ~/.vimrc
 cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
 make -j3
-wget https://raw.github.com/bryanbibat/setup-scripts/master/.vimrc -O ~/.vimrc
+wget https://raw.github.com/bryanbibat/setup-scripts/master/.vimrc -O ~/.gvimrc
 
 # install Node.js
 echo -e "\n=> Downloading Node.js v8.16...\n"
