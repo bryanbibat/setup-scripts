@@ -33,20 +33,20 @@ make
 sudo make install
 echo -e "\n=> Syncing gVim...\n"
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-wget https://raw.github.com/bryanbibat/setup-scripts/master/.vundle -O ~/.vimrc
+wget https://raw.github.com/bryanbibat/setup-scripts/master/.vimrc -O ~/.vimrc
 vim +BundleInstall +qall
 cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
 make
-wget https://raw.github.com/bryanbibat/setup-scripts/master/.vimrc -O ~/.vimrc
+wget https://raw.github.com/bryanbibat/setup-scripts/master/.gvimrc -O ~/.gvimrc
 
 # install Node.js
-echo -e "\n=> Downloading Node.js v8.16...\n"
+echo -e "\n=> Downloading Node.js v8.18...\n"
 cd /tmp
-wget http://nodejs.org/dist/v0.8.16/node-v0.8.16.tar.gz
-tar zxvf node-v0.8.16.tar.gz
-echo -e "\n=> Building Node.js v8.16...\n"
-cd node-v0.8.1
+wget http://nodejs.org/dist/v0.8.18/node-v0.8.18.tar.gz
+tar zxvf node-v0.8.18.tar.gz
+echo -e "\n=> Building Node.js v8.18...\n"
+cd node-v0.8.18
 ./configure
 make
 sudo make install
@@ -65,4 +65,4 @@ echo -e "\n=> Installing system monitor indicator...\n"
 sudo apt-get -y install indicator-multiload
 
 echo -e "\n=> Initial setup complete!\n"
-echo -e "\n=> Final steps:\n   * Install VM guest additions\n   * Update font for terminal\n   * Enable system indicator\n"
+echo -e "\n=> Final steps:\n   * Install VM guest additions\n   * Update font for terminal\n   * Enable system indicator\n   * (optional) Download/install ProggyFont http://www.proggyfonts.com/index.php?menu=download\n   * (optional) Replace gnome-terminal with Terminator\n"

@@ -7,6 +7,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'bzx/vim-theme-pack'
+Bundle 'altercation/vim-colors-solarized'
+Bundle '29decibel/codeschool-vim-theme'
 Bundle 'ap/vim-css-color'
 
 Bundle 'scrooloose/nerdtree'
@@ -36,17 +38,13 @@ set showmode
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set lines=46 columns=180
 set number
 set ruler
 set bs=2
 set list
 set listchars=tab:→\ ,eol:¬
 set history=1000
+set splitright
 
 nnoremap <leader>n :NERDTree .<CR>
-set guifont=Inconsolata\ 10
-colorscheme vividchalk
+nnoremap <silent> <S-r> :CommandT<CR>
