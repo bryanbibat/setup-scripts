@@ -1,3 +1,4 @@
+let mapleader="\<Space>"
 set nocompatible
 filetype off
 
@@ -13,13 +14,16 @@ Bundle 'ap/vim-css-color'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
 
 Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 Bundle 'tpope/vim-rails'
@@ -38,8 +42,12 @@ set showmode
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 
+set nocompatible   
+set laststatus=2   
 set number
 set ruler
+set encoding=utf-8 
+let g:Powerline_symbols = 'fancy'
 set bs=2
 set list
 set listchars=tab:→\ ,eol:¬
@@ -48,3 +56,4 @@ set splitright
 
 nnoremap <leader>n :NERDTree .<CR>
 nnoremap <silent> <S-r> :CommandT<CR>
+let g:CommandTMaxFiles=50000
